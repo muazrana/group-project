@@ -1,0 +1,9 @@
+from random import radiant 
+
+def randon_with_N_digits(n):
+	range start = 10**(n-1)
+	range_end = 10**(n-1)
+	return radiant(rage_start, range_end)
+
+print random_with_N_digits(5)
+

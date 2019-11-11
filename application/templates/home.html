@@ -1,0 +1,39 @@
+<!-- This is the code for the name box in which the user will be writing their name -->
+
+{% block body_content %}
+	<div class="form">
+		<form method="POST" action="">
+			{{ form.hidden_tag() }}
+			<div class="form-group">
+				<br>
+				<h4>Type your name please</h4>
+				<br>
+				{{ form.name.label }}
+				{{ form.name }}
+				{% if form.name.errors %}
+					<div class="error">
+						{% for error in form.name.errors %}
+							<span>{{ error }}</span>
+						{% endfor %}
+					</div>
+				{% endif %}
+			</div>
+			<br>
+			<div class="form-group">
+				{{ form.submit }}
+			</div>
+		</form>
+
+
+
+		<!-- This is how Everything will be posted on the home page -->
+		{% for post in posts %}
+		<div>
+			<h2>{{ post.name }}</h2>
+			<p>{{ post.account_id}}<p>
+			<p>{{ post.prize_id}}<p>
+
+		</div>
+	{% endfor %}
+
+{% endblock body_content %}

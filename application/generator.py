@@ -19,7 +19,6 @@ def random_char(y):
 	return ''.join(random.choice(string.ascii_letters) for x in range(y))
 random_letter = str(random_char(5))
 
-print random_letter + random_number
 
 
 #generates a random prize

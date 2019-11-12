@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from application.models import Users
-from wtforms import submitField, StringField
+from application.models import User
+from wtforms import SubmitField, StringField
 from wtforms.validators import DataRequired, Length
 
 class NameForm(FlaskForm):
@@ -10,5 +10,5 @@ class NameForm(FlaskForm):
 		Length(min=4, max=100)
 		])
 
-	submit = submitField('Post Content')
+	submit = SubmitField('Post Content')
 

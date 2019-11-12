@@ -27,11 +27,11 @@
 
 
 		<!-- This is how Everything will be posted on the home page -->
-		{% for post in posts %}
+		{% for user in user %}
 		<div>
-			<h2>{{ post.name }}</h2>
-			<p>{{ post.account_id}}<p>
-			<p>{{ post.prize_id}}<p>
+			<h2>{{ user.name }}</h2>
+			<p>{{ user.account_id}}<p>
+			<p>{{ user.prize_id}}<p>
 
 		</div>
 	{% endfor %}

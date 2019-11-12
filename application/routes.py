@@ -6,7 +6,7 @@ from application.models import User
 from application.forms import NameForm
 from application.generator import random_with_N_digits, random_char
 import random
-prize_list = ['House', '£10,000', '£100,000', 'Car', 'Mac Computer', 'IPAD', 'Iphone 11 pro', 'Package holiday' ]
+prize_list = ['House', '£10,000', '£100,000', 'Car', 'Mac Computer', 'IPAD', 'Iphone 11 pro', 'Package holiday', '£10','£20', '£50']
 prize_won=(random.choice(prize_list))
 
 

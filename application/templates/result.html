@@ -1,10 +1,11 @@
 <!-- This is how Everything will be posted on the home page -->
 {% block body_content %}		
-	{% for user in home %}
+	<h1> Account details</h1>
 		<div>
-			<h2>{{ user.name }}</h2>
-			<p>{{ user.account_id}}<p>
-			<p>{{ user.prize_id}}<p>
+			<h2> Name: {{ new_user.name }}</h2>
+			<p> Account id: {{ new_user.account_id}}<p>
+			<p>Prize won: {{ new_user.prize_won}}<p>
 
 		</div>
-	{% endfor %}
+	
+{% endblock%}

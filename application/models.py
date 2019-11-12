@@ -7,4 +7,5 @@ class User(db.Model):
 	date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 	account_id = db.Column(db.String(5), nullable=False, unique=True)
 	prize_won = db.Column(db.String(15), nullable=False)
+	
 

@@ -1,0 +1,10 @@
+<!-- This is how Everything will be posted on the home page -->
+{% block body_content %}		
+	{% for user in home %}
+		<div>
+			<h2>{{ user.name }}</h2>
+			<p>{{ user.account_id}}<p>
+			<p>{{ user.prize_id}}<p>
+
+		</div>
+	{% endfor %}

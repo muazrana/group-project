@@ -5,6 +5,6 @@ RUN apt install python3 -y
 RUN apt install python3-pip -y
 WORKDIR /app
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 COPY . .
-ENTRYPOINT ["["/usr/bin/python3", "run.py"]
+ENTRYPOINT ["/usr/bin/python3", "run.py"]

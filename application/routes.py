@@ -1,14 +1,11 @@
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
 
+
+from application import app, db
 from  flask import Flask, render_template, url_for, redirect 
-from app import app, db
-from flask import Flask render_template, url_for, redirect 
 from application.form import NameForm 
-from application.models import Users
+from application.models import User
 import boto3
 import json
-import boto3
 import random
 from random import randint 
 import string 
@@ -16,7 +13,7 @@ import string
 awsFunction = boto3.client('lambda', region_name='eu-west-1')
 
 app= Flask(__name__)
-awsFunction = boto3.client('lambda', eu-west-1'
+awsFunction = boto3.client('lambda', eu-west-1')
 
 @app.route("/", methods=['GET', 'POST'])
 @app.route("/home", methods=['GET','POST'])
@@ -33,10 +30,10 @@ def home():
 				    InvicationType='RequestResponse'
      prize_won = json.loads(userPrize['Payload'].read().decode("utf-8"))
      if form.validate_on_submit():
-	     User = Users( name = form.name.data, 
+	     Users = User( name = form.name.data, 
 			  account_id = account_id,
 			  prize_won = prize_won) 
-	     db.session.add(User)
+	     db.session.add(Users)
 	     db.session.commit()
 	     id = User.query.filter_by(account_id=account_id).first()
 	     return redirect(url_for('result', id=id.id)

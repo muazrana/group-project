@@ -26,7 +26,7 @@ def home():
 				    InvicationType='RequestResponse')
      prize_won = json.loads(userPrize['Payload'].read().decode("utf-8"))
      if form.validate_on_submit():
-	     Users = User( name = form.name.data, 
+	     Users = User(name = form.name.data, 
 			  account_id = account_id,
 			  prize_won = prize_won) 
 	     db.session.add(Users)

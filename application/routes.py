@@ -1,5 +1,3 @@
-
-
 from app import app, db
 from  flask import Flask, render_template, url_for, redirect 
 from app.forms import NameForm 

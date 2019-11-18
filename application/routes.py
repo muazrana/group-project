@@ -1,6 +1,6 @@
-from flask import Flask, render_template, url_for, redirect 
+from flask import Flask, render_template, url_for, redirect
 from application import app, db
-from application.forms import NameForm 
+from application.forms import NameForm
 from application.models import User
 import boto3
 import json
@@ -19,14 +19,14 @@ def home():
 	userPrize = awsFunction.invoke(FunctionName='prize_gen', InvocationType='RequestResponse')
 	prize_won = json.loads(userPrize['Payload'].read().decode("utf-8"))
 	if form.validate_on_submit():
-		Users = User(name = form.name.data, 
+		Users = User(name = form.name.data,
 			  account_id = account_id,
-			  prize_won = prize_won) 
+			  prize_won = prize_won)
 		db.session.add(Users)
 		db.session.commit()
-		id = User.query.filter_by(account_id=account_id).first()
-		return redirect(url_for('result', id=id.id))
-	return render_template('home.html', title='Home', form=form, account_id=account_id, prize_won=prize_won)
+		temp = User.query.filter_by(account_id=account_id).first()
+		return redirect(url_for('result', id=temp.id))
+	return render_template('home.html', title='Home', form=form)
 
 @app.route("/result/<int(min=1):id>")
 def result(id):

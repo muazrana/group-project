@@ -1,9 +1,9 @@
 
 
-from application import app, db
+from app import app, db
 from  flask import Flask, render_template, url_for, redirect 
-from application.forms import NameForm 
-from application.models import User
+from app.forms import NameForm 
+from app.models import User
 import boto3
 import json
 import random

@@ -6,7 +6,7 @@ An application where people can write their name in and get a unique inidividual
   2. Make sure you have __python3__ installed on your VM
   3. Install __pip3__
   4. Clone this repository to your machine
-  5. run the command __pip install -r requirements.txt__  
+  5. run the command __"pip install -r requirements.txt"__  
   
   
  # Running the App in different ways

@@ -24,8 +24,8 @@ An application where people can write their name in and get a unique inidividual
 
  ## Using Docker/Docker-compose in AWS
  __Open ec2 instance and write the following commands__
-  1. Sudo yum update 
-  2. Sudo amazon-linux-extras install docker 
+  1. sudo yum update 
+  2. sudo amazon-linux-extras install docker 
   3. sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)"
       -o /usr/local/bin/docker-compose
   4. sudo usermod -aG docker $(whoami)

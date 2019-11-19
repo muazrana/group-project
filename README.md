@@ -34,44 +34,43 @@ Using lambda function instead? Head to Lambda Branch and clone it. Later create 
    5.   return prize_won
       
   ## Lambda function for Letter Generator
-   import random
+   1. import random
   
-   def lambda_handler(event, context):
-    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    random_letter=''
-    for i in range(3):
-        random_letter += letters[random.SystemRandom().randint(0, 25)]
-    return random_letter
+   2. def lambda_handler(event, context):
+   3.  letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+   4. random_letter=''
+   5. for i in range(3):
+   6.     random_letter += letters[random.SystemRandom().randint(0, 25)]
+   7. return random_letter
     
   ## Lambda function for Number Generator
-   import random
+   1. import random
    
-   def lambda_handler(event, context):
-      random_number = ''
-      for n in range(3):
-        random_number += str(random.randint(0,9))
-      return random_number
+   2. def lambda_handler(event, context):
+   3.   random_number = ''
+   4.   for n in range(3):
+   5.     random_number += str(random.randint(0,9))
+   6.   return random_number
       
  ## Lambda function for Shuffle
  __"Suffle was a function created in order to combine 3 strings from both 'letter generator' & 'number generator' in order to get a unique id for each individual user. The code for shuffle file is written below:__
  
-  import json
-  import boto3
-  import random
-  def lambda_handler(event, context):
-      awsFunction = boto3.client("lambda")
-      numbers = awsFunction.invoke(
-              FunctionName='number_gen',
-              InvocationType='RequestResponse')
-      num = numbers['Payload'].read()
-      words = awsFunction.invoke(
-              FunctionName='letter_gen',
-              InvocationType='RequestResponse')
-      wrd = words['Payload'].read()
-      numwrd = str(wrd)[3:len(str(wrd))-2] + str(num)[3:len(str(wrd))-2]
-      response = ''.join(random.sample(numwrd, len(numwrd)))
-      return (response)
- 
-      c
+  1. import json
+  2. import boto3
+  3. import random
+  4. def lambda_handler(event, context):
+  5.    awsFunction = boto3.client("lambda")
+  6.    numbers = awsFunction.invoke(
+  7.            FunctionName='number_gen',
+  8.            InvocationType='RequestResponse')
+  9.    num = numbers['Payload'].read()
+ 10.    words = awsFunction.invoke(
+ 11.            FunctionName='letter_gen',
+ 12.            InvocationType='RequestResponse')
+ 13.    wrd = words['Payload'].read()
+ 14.    numwrd = str(wrd)[3:len(str(wrd))-2] + str(num)[3:len(str(wrd))-2]
+ 15.    response = ''.join(random.sample(numwrd, len(numwrd)))
+ 16.    return (response)
+
    
  

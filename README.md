@@ -26,12 +26,12 @@ An application where people can write their name in and get a unique inidividual
 Using lambda function instead? Head to Lambda Branch and clone it. Later create these lambda functions on AWS. Search for Lambda and     start creating the following functions mentioned, with their code, below.
  
   ## Lambda function for Prize Generator 
-   import random
+   1. import random
    
-   def lambda_handler(event, context):
-      prize_list = ['House', '£10,000', '£100,000', 'Car', 'Mac Computer', 'IPAD', 'Iphone 11 pro', 'Package holiday' ]
-      prize_won = (random.choice(prize_list))
-      return prize_won
+   2. def lambda_handler(event, context):
+   3.    prize_list = ['House', '£10,000', '£100,000', 'Car', 'Mac Computer', 'IPAD', 'Iphone 11 pro', 'Package holiday' ]
+   4.   prize_won = (random.choice(prize_list))
+   5.   return prize_won
       
   ## Lambda function for Letter Generator
    import random

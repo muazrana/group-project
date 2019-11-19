@@ -22,7 +22,7 @@ An application where people can write their name in and get a unique inidividual
   2. Once its installed you can run using the code, to build an image, __docker build -t group-project .__
   3. Next step after writing the code above to run it is __docker run -d -p 5000:5000 group-project__
  
-# using Lambda Branch on EC2
+# Using Lambda Branch on EC2
 Using lambda function instead? Head to Lambda Branch and clone it. Later create these lambda functions on AWS. Search for Lambda and     start creating the following functions mentioned, with their code, below.
  
   ## Lambda function for Prize Generator 
@@ -51,6 +51,27 @@ Using lambda function instead? Head to Lambda Branch and clone it. Later create 
       for n in range(3):
         random_number += str(random.randint(0,9))
       return random_number
+      
+ ## Lambda function for Shuffle
+ __"Suffle was a function created in order to combine 3 strings from both 'letter generator' & 'number generator' in order to get a unique id for each individual user. The code for shuffle file is written below:__
+ 
+  import json
+  import boto3
+  import random
+  def lambda_handler(event, context):
+      awsFunction = boto3.client("lambda")
+      numbers = awsFunction.invoke(
+              FunctionName='number_gen',
+              InvocationType='RequestResponse')
+      num = numbers['Payload'].read()
+      words = awsFunction.invoke(
+              FunctionName='letter_gen',
+              InvocationType='RequestResponse')
+      wrd = words['Payload'].read()
+      numwrd = str(wrd)[3:len(str(wrd))-2] + str(num)[3:len(str(wrd))-2]
+      response = ''.join(random.sample(numwrd, len(numwrd)))
+      return (response)
+ 
       
    
  

@@ -22,3 +22,35 @@ An application where people can write their name in and get a unique inidividual
   2. Once its installed you can run using the code, to build an image, __docker build -t group-project .__
   3. Next step after writing the code above to run it is __docker run -d -p 5000:5000 group-project__
  
+# using Lambda Branch on EC2
+Using lambda function instead? Head to Lambda Branch and clone it. Later create these lambda functions on AWS. Search for Lambda and     start creating the following functions mentioned, with their code, below.
+ 
+  ## Lambda function for Prize Generator 
+   import random
+   
+   def lambda_handler(event, context):
+      prize_list = ['House', '£10,000', '£100,000', 'Car', 'Mac Computer', 'IPAD', 'Iphone 11 pro', 'Package holiday' ]
+      prize_won = (random.choice(prize_list))
+      return prize_won
+      
+  ## Lambda function for Letter Generator
+   import random
+  
+   def lambda_handler(event, context):
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    random_letter=''
+    for i in range(3):
+        random_letter += letters[random.SystemRandom().randint(0, 25)]
+    return random_letter
+    
+  ## Lambda function for Number Generator
+   import random
+   
+   def lambda_handler(event, context):
+      random_number = ''
+      for n in range(3):
+        random_number += str(random.randint(0,9))
+      return random_number
+      
+   
+ 

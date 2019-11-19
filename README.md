@@ -22,7 +22,7 @@ An application where people can write their name in and get a unique inidividual
   2. Once its installed you can run using the code, to build an image, __docker build -t group-project .__
   3. Next step after writing the code above to run it, use the command, __docker run -d -p 5000:5000 group-project__
 
- ## Using Docker/Docker-compose in AWS
+ ## Using Docker/Docker-compose on AWS
  __Open ec2 instance and write the following commands__
   1. sudo yum update 
   2. sudo amazon-linux-extras install docker 
@@ -32,7 +32,7 @@ An application where people can write their name in and get a unique inidividual
   5. sudo chmod +x /usr/local/bin/docker-compose
   6. sudo yum install git
   7. git clone "project name"
-  8. git checkout "name of the branch, i.e developments"
+  8. git checkout "name of the branch, i.e developments" 
   9. docker-compose up -d --build
   
 # Using Lambda Branch on EC2
@@ -86,6 +86,14 @@ Using lambda function instead? Head to Lambda Branch and clone it. Later create 
  16.    return (response)
 
 # Using RDS (Amazon Relational Database Service)
-
+In AWS console, search for RDS and create the database and follow the given steps:
+  
+ 1. __Choose a daabase creation method__ "Standard Create"
+ 2. __Engine Option__ "MySQL"
+ 3. Leave the rest as it is and go to __Templates__ "Free tier"
+ 4. In __Settings__ Give your database a unique name
+ 5. __Master username__ "Add a login ID name"
+ 6. __Master password__ "Add a password to access your database" 
+ 7. Leave all the rest as it is and at the bottom click "Create database" 
    
  

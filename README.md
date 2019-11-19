@@ -20,8 +20,21 @@ An application where people can write their name in and get a unique inidividual
  ## Using Docker
   1. Docker can be uploaded to your machine using __curl https://get.docker.com | sudo bash__
   2. Once its installed you can run using the code, to build an image, __docker build -t group-project .__
-  3. Next step after writing the code above to run it is __docker run -d -p 5000:5000 group-project__
- 
+  3. Next step after writing the code above to run it, use the command, __docker run -d -p 5000:5000 group-project__
+
+ ## Using Docker/Docker-compose in AWS
+ __Open ec2 instance and write the following commands__
+  1. Sudo yum update 
+  2. Sudo amazon-linux-extras install docker 
+  3. sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)"
+      -o /usr/local/bin/docker-compose
+  4. sudo usermod -aG docker $(whoami)
+  5. sudo chmod +x /usr/local/bin/docker-compose
+  6. sudo yum install git
+  7. git clone "project name"
+  8. git checkout "name of the branch, i.e developments"
+  9. docker-compose up -d --build
+  
 # Using Lambda Branch on EC2
 Using lambda function instead? Head to Lambda Branch and clone it. Later create these lambda functions on AWS. Search for Lambda and     start creating the following functions mentioned, with their code, below.
  

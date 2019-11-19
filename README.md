@@ -85,5 +85,7 @@ Using lambda function instead? Head to Lambda Branch and clone it. Later create 
  15.    response = ''.join(random.sample(numwrd, len(numwrd)))
  16.    return (response)
 
+# Using RDS (Amazon Relational Database Service)
+
    
  

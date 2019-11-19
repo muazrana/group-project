@@ -86,7 +86,7 @@ Using lambda function instead? Head to Lambda Branch and clone it. Later create 
  16.    return (response)
 
 # Using RDS (Amazon Relational Database Service)
-In AWS console, search for RDS and create the database and follow the given steps:
+__"Creating the database"__ In AWS console, search for RDS and create the database and follow the given steps:
   
  1. __Choose a daabase creation method__ "Standard Create"
  2. __Engine Option__ "MySQL"

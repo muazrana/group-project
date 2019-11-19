@@ -72,6 +72,6 @@ Using lambda function instead? Head to Lambda Branch and clone it. Later create 
       response = ''.join(random.sample(numwrd, len(numwrd)))
       return (response)
  
-      
+      c
    
  

@@ -35,6 +35,8 @@ We recommend using the lambda branch to run the app.
   7. git clone https://github.com/muazrana/group-project
   8. git checkout lambda 
   9. docker-compose up -d --build
+  10. Copy and past the public url into the google search bar
+  
   
 # Using Lambda Branch on EC2
 Using lambda function instead? Head to Lambda Branch and clone it. Later create these lambda functions on AWS. Search for Lambda and     start creating the following functions mentioned, with their code, below.
@@ -113,3 +115,6 @@ Edit the __init__.py file to include your secret key and your database uri you h
 After you have created your database in Amazon RDS you need to click the link VPC security group link. Another security group needs to be made with the type being MYSQL/AURORA, protocol is TCP and port range is 3306. Source is the group ID of the other secuirty group you made previously 
 
 After all this has be implemented follow the instruction under the title # Using Docker/Docker-compose on AWS
+
+# To Kill app
+Stop and terminate the EC2 instance the app is running. 

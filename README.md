@@ -66,7 +66,7 @@ Using lambda function instead? Head to Lambda Branch and clone it. Later create 
    6.   return random_number
       
  ## Lambda function for Shuffle
- __"Suffle was a function created in order to combine 3 strings from both 'letter generator' & 'number generator' in order to get a unique id for each individual user. The code for shuffle file is written below:__
+ __"Shuffle was a function created in order to combine 3 strings from both 'letter generator' & 'number generator' in order to get a unique id for each individual user. The code for shuffle file is written below:__
  
   1. import json
   2. import boto3
@@ -84,7 +84,13 @@ Using lambda function instead? Head to Lambda Branch and clone it. Later create 
  14.    numwrd = str(wrd)[3:len(str(wrd))-2] + str(num)[3:len(str(wrd))-2]
  15.    response = ''.join(random.sample(numwrd, len(numwrd)))
  16.    return (response)
-
+ 
+ #IAM roles 
+ 
+ IAM is a Amazon services and can be found on the management console 
+ Shuffle needs to be given an IAM role to be able to access the other lambda functions. The IAM role given was Lambda_full_acess_4_Lambda
+ The EC2 instance you have spin up to build the app image on also needs to be given an IAM role to be able to access the RDS you have made and the lambda functions. The roles given for EC2 was AmazonRDSFullAccess and AWSLambdaFullAccess. 
+ 
 # Using RDS (Amazon Relational Database Service)
 __"Creating the database"__ In AWS console, search for RDS and create the database and follow the given steps:
   
@@ -97,3 +103,4 @@ __"Creating the database"__ In AWS console, search for RDS and create the databa
  7. Leave all the rest as it is and at the bottom click "Create database" 
    
  
+Edit the __init__.py file to include your secret key and your database uri you have just created. 

@@ -85,7 +85,7 @@ Using lambda function instead? Head to Lambda Branch and clone it. Later create 
  15.    response = ''.join(random.sample(numwrd, len(numwrd)))
  16.    return (response)
  
- #IAM roles 
+ # IAM roles 
  
  IAM is a Amazon services and can be found on the management console 
  Shuffle needs to be given an IAM role to be able to access the other lambda functions. The IAM role given was Lambda_full_acess_4_Lambda

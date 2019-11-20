@@ -1,12 +1,14 @@
 # DevOps - Python Project
 An application where people can write their name in and get a unique inidividual account number followed by a prize. There are several big surprises in this application which one can win. The prize is randomly generated and is not selected according to someones age or anything. 
 
+We recommend using the lambda branch to run the app. 
 # Prerequisite 
   1. Make sure the very first thing you do is __"sudo apt-get update"__
   2. Make sure you have __python3__ installed on your VM
   3. Install __pip3__
   4. Clone this repository to your machine
   5. run the command __"pip install -r requirements.txt"__  
+  6. An amazon account 
   
   
  # Running the App in different ways
@@ -91,6 +93,11 @@ Using lambda function instead? Head to Lambda Branch and clone it. Later create 
  Shuffle needs to be given an IAM role to be able to access the other lambda functions. The IAM role given was Lambda_full_acess_4_Lambda
  The EC2 instance you have spin up to build the app image on also needs to be given an IAM role to be able to access the RDS you have made and the lambda functions. The roles given for EC2 was AmazonRDSFullAccess and AWSLambdaFullAccess. 
  
+ # Security Groups
+ Also a Amazon service and can be found on the management console 
+ A security group needs to be created for your EC2 instance. In the inbound rule the type is HTTP, proctocol is TCP and port range is 80. Another inbound rule needs to be for this same security group.  The type is MYSQL/AURORA, proctocol is TCP and port range is 3306. Source for both rule is 0.0.0.0/0
+ 
+ 
 # Using RDS (Amazon Relational Database Service)
 __"Creating the database"__ In AWS console, search for RDS and create the database and follow the given steps:
   
@@ -103,4 +110,5 @@ __"Creating the database"__ In AWS console, search for RDS and create the databa
  7. Leave all the rest as it is and at the bottom click "Create database" 
    
  
-Edit the __init__.py file to include your secret key and your database uri you have just created. 
+Edit the __init__.py file to include your secret key and your database uri you have just created. The database uri is the endpoint to the database. 
+After you have created your database in Amazon RDS you need to click the link VPC security group link. Another security group needs to be made with the type being MYSQL/AURORA, protocol is TCP and port range is 3306. Source is the group ID of the other secuirty group you made previously 

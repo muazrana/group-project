@@ -28,13 +28,12 @@ We recommend using the lambda branch to run the app.
  __Open ec2 instance and write the following commands__
   1. sudo yum update 
   2. sudo amazon-linux-extras install docker 
-  3. sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)"
-      -o /usr/local/bin/docker-compose
-  4. sudo usermod -aG docker $(whoami)
+  3. To install docker-compose - sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)"-o /usr/local/bin/docker-compose
+  4. sudo usermod -aG docker $(whoami) - make sure to exit out of the EC2 instance for this to take effect 
   5. sudo chmod +x /usr/local/bin/docker-compose
   6. sudo yum install git
-  7. git clone "project name"
-  8. git checkout "name of the branch, i.e developments" 
+  7. git clone https://github.com/muazrana/group-project
+  8. git checkout lambda 
   9. docker-compose up -d --build
   
 # Using Lambda Branch on EC2
@@ -112,3 +111,5 @@ __"Creating the database"__ In AWS console, search for RDS and create the databa
  
 Edit the __init__.py file to include your secret key and your database uri you have just created. The database uri is the endpoint to the database. 
 After you have created your database in Amazon RDS you need to click the link VPC security group link. Another security group needs to be made with the type being MYSQL/AURORA, protocol is TCP and port range is 3306. Source is the group ID of the other secuirty group you made previously 
+
+After all this has be implemented follow the instruction under the title # Using Docker/Docker-compose on AWS

@@ -1,12 +1,12 @@
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-
+from application import config 
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://flaskdb1:flaskdb1@flaskdb1.c14knypx6xhk.eu-west-1.rds.amazonaws.com/flaskapp'
-app.config['SECRET_KEY'] = '7589g2658d55g256582365852r2h65fg'
+app.config['SQLALCHEMY_DATABASE_URI'] = database_uri.config
+app.config['SECRET_KEY'] =  secret_key.config
 
 db = SQLAlchemy(app)
 
